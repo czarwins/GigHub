@@ -1,0 +1,25 @@
+{
+  "name": "gighub",
+  "version": "1.0.0",
+  "description": "App Concept for Freelance Software Development Gigs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/czarwins/GigHub.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/czarwins/GigHub/issues"
+  },
+  "homepage": "https://github.com/czarwins/GigHub#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.4.2"
+  }
+}
