@@ -12,6 +12,7 @@ const taskController = {
     create: (req, res) => {
         console.log(req.body)
         Task.create({
+            title: req.body.title,
             workDescription: req.body.workDescription,
             qualifications: req.body.qualifications,
             totalHours: req.body.totalHours,
