@@ -14,7 +14,7 @@ const taskController = {
         Task.create({
             title: req.body.title,
             workDescription: req.body.workDescription,
-            qualifications: req.body.qualifications,
+            qualifications: [req.text.skillsA],
             totalHours: req.body.totalHours,
             budget: req.body.budget,
             company: req.body.company,

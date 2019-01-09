@@ -8,6 +8,7 @@ const TaskManager = new Schema({
     pointOfContact: String,
     industry: String,
     memberSince: Number,
+    tasks:[]
 });
 
 module.exports = mongoose.model("TaskManager", TaskManager)

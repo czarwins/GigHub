@@ -1,9 +1,16 @@
-<h1>Test</h1>
+
 {{#each tasks}}
-<div>
-    {{title}}
-    {{workDescription}}
-    <h1>test</h1>
+<div class="uk-container uk-align-center">
+    <h1>Title:{{title}}</h1> <br>
+    Description:{{workDescription}} <br>
+    Required Skills: {{qualifications}} <br>
+    Estimated # of hours of work: {{totalHours}} <br>
+    Pay per hour: $ {{budget}} per hour<br>
+    Company: {{company}} <br>
+    Industry: {{industry}} <br>
+    Date Posted: {{postDate}}
+
+    
 </div>
 
 {{/each}}
