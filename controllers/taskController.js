@@ -11,10 +11,14 @@ const taskController = {
     },
     create: (req, res) => {
         console.log(req.body)
+        const skills = [req.body.skillsA,req.body.skillsB,req.body.skillsC,req.body.skillsD,req.body.skillsE,req.body.skillsF,req.body.skillsG,req.body.skillsO];
+        skilled = (value) => {
+            return value != null
+        }
         Task.create({
             title: req.body.title,
             workDescription: req.body.workDescription,
-            qualifications: [req.text.skillsA],
+            qualifications: skills.filter(skilled),
             totalHours: req.body.totalHours,
             budget: req.body.budget,
             company: req.body.company,

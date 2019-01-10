@@ -1,16 +1,12 @@
 
 {{#each tasks}}
-<div class="uk-container uk-align-center">
-    <h1>Title:{{title}}</h1> <br>
-    Description:{{workDescription}} <br>
+<div class="uk-container uk-align-center uk-card uk-card-primary uk-card-body uk-card-hover">
+    <a href="/{{_id}}"><h1>Title:{{title}}</h1></a> <br>
     Required Skills: {{qualifications}} <br>
     Estimated # of hours of work: {{totalHours}} <br>
     Pay per hour: $ {{budget}} per hour<br>
-    Company: {{company}} <br>
-    Industry: {{industry}} <br>
     Date Posted: {{postDate}}
 
-    
 </div>
 
 {{/each}}
