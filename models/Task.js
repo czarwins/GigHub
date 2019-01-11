@@ -9,7 +9,11 @@ const Task = new Schema({
     budget: Number,
     company: String,
     industry: String,
-    postDate: String
+    postDate: String,
+    contractor: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Contractor'
+    }]
 });
 
 module.exports = mongoose.model("Task", Task)

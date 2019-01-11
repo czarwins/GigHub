@@ -1,0 +1,25 @@
+<h1>TASK MANAGER SHOW PAGE</h1>
+
+<a href="/manager/{{taskMgr._id}}/new">New Task</a>
+
+<img src="{{taskMgr.image}}" alt=""> <br>
+Company: {{taskMgr.company}} <br>
+Website: <a href="#">{{taskMgr.website}}</a> <br>
+Point of Contact: {{taskMgr.pointOfContact}} <br>
+Industry: {{taskMgr.industry}} <br>
+
+
+
+{{#each taskMgr.tasks}}
+
+<div class="uk-container uk-align-center uk-card uk-card-primary uk-card-body uk-card-hover">
+   <a href="/manager/{{_id}}"><h1>Title:{{title}}</h1></a> <br>
+
+    Required Skills: {{qualifications}} <br>
+    Estimated # of hours of work: {{totalHours}} <br>
+    Pay per hour: $ {{budget}} per hour<br>
+    Date Posted: {{postDate}}
+
+</div>
+{{/each}}
+

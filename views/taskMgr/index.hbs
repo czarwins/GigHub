@@ -1,9 +1,10 @@
 <h1>TASK MANAGER PAGE</h1>
-{{#each taskMgr}}
-<img src="{{image}}" alt=""> <br>
+{{#each tasks}}
+<div class="uk-container uk-align-center uk-card uk-card uk-card-body uk-card-hover">
+<a href="/{{_id}}"><img src="{{image}}" alt=""></a> <br>
 Company: {{company}} <br>
-Website: {{website}} <br>
-Point of Contact: {{pointOfContact}} <br>
 Industry: {{industry}} <br>
-Tasks Created: {{tasks}}
+<br>
+</div>
 {{/each}}
+

@@ -8,7 +8,10 @@ const TaskManager = new Schema({
     pointOfContact: String,
     industry: String,
     memberSince: Number,
-    tasks:[]
+    tasks:[{
+        type: Schema.Types.ObjectId,
+        ref: 'Task'
+    }]
 });
 
 module.exports = mongoose.model("TaskManager", TaskManager)

@@ -1,16 +1,24 @@
 Task = require("../models/Task")
+TaskManager = require("../models/TaskManager")
 
 const taskController = {
     index: (req, res) => {
-        Task.find({}).then(tasks => {
-            res.render('app/index', { tasks })
+        Task.find({}).then(task => {
+            res.render('app/index', { 
+                managerId:req.params.id,
+                task 
+            })
         })
     },
     new: (req, res) => {
-        res.render("app/new")
+        res.render("app/new", {
+            managerId: req.params.id
+        })
     },
     create: (req, res) => {
+        let managerId = req.params.id;
         console.log(req.body)
+        const tasks = [];
         const skills = [req.body.skillsA,req.body.skillsB,req.body.skillsC,req.body.skillsD,req.body.skillsE,req.body.skillsF,req.body.skillsG,req.body.skillsO];
         skilled = (value) => {
             return value != null
@@ -23,26 +31,35 @@ const taskController = {
             budget: req.body.budget,
             company: req.body.company,
             industry: req.body.industry,
-            postDate: req.body.postDate
+            postDate: req.body.postDate,
+            // company: req.body.company,
+            // website: req.body.website,
+            // image: req.body.image,
+            // pointOfContact: req.body.pointOfContact,
+            // industry: req.body.industry,
+            // memberSince: req.body.memberSince,
+            // tasks: []
         }).then(newTask => {
-            res.redirect('/')
+            res.redirect('/manager/'+managerId+'/task')
         })
     },
     show: (req, res) => {
-        const taskId = req.params.id
+    
+        const taskId = req.params.taskId
         Task.findById(taskId).then((task) => {
             console.log(task)
-            res.render('app/show', { task })
+            // res.send("hello world")
+            res.render('app/show', { task, taskId })
         })
     },
     edit: (req, res) => {
         const taskId = req.params.id
-        // console.log(taskId)
+        console.log(taskId)
         res.render('app/edit', { taskId })
     },
     update: (req, res) => {
         const taskId = req.params.id
-        console.log(req.body)
+        console.log( req.body)
         Task.findByIdAndUpdate(taskId, req.body, { new: true }).then((task) => {
             res.redirect(`/${taskId}`)
         })
@@ -50,11 +67,9 @@ const taskController = {
     delete: (req, res) => {
         const taskId = req.params.id
         Task.findByIdAndRemove(taskId).then(() => {
-            res.redirect('/')
+            res.redirect('/:id/manager')
         })
     }
 }
-
-
 
 module.exports = taskController

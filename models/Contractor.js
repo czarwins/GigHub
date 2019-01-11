@@ -4,13 +4,13 @@ const Schema = mongoose.Schema
 const Contractor = new Schema({
     name: String,
     image: String,
-    email: Number,
+    email: String,
     skills: [],
-    hourlyRate: String,
-    hoursAvailablePerWeek: String,
+    hourlyRate: Number,
+    hoursAvailablePerWeek: Number,
     website: String,
     bio: String,
-    memberSince: Number
+    
 });
 
 module.exports = mongoose.model("Contractor", Contractor)
