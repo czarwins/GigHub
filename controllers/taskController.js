@@ -65,9 +65,9 @@ const taskController = {
         })
     },
     delete: (req, res) => {
-        const taskId = req.params.taskId
-        Task.findByIdAndRemove(taskId).then(() => {
-            res.redirect('/:id/manager')
+        const managerId = req.params.managerId
+        Task.findByIdAndRemove(managerId).then(() => {
+            res.redirect('/manager')
         })
     }
 }
