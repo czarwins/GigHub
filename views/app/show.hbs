@@ -15,8 +15,8 @@
     
 </div>
 
-<a href="/manager/{{task._id}}/edit"><button >EDIT GIG</button></a>
+<a href="/manager/{{task._id}}/edit"><button class="uk-button uk-button-secondary">EDIT GIG</button></a>
 
-<form action="">
-    <button>DELETE</button>
+<form action="/manager/{{task._id}}?_method=DELETE" method="POST">
+    <button class="uk-button uk-button-secondary" type="submit">DELETE</button>
 </form>
