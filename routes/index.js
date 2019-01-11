@@ -15,8 +15,8 @@ router.get('/manager/:id/task', taskController.index)
 router.get('/manager/:id/new', taskController.new)
 router.post('/manager/:id', taskController.create)
 router.get('/manager/:taskId', taskController.show)
-router.get('/:id/manager/:managerId/edit', taskController.edit)
-router.patch('/:id/manager/:managerId', taskController.update)
+router.get('/manager/:taskId/edit', taskController.edit)
+router.patch('/manager/:taskId', taskController.update)
 router.delete('/:id/manager/:managerId', taskController.delete)
 
 module.exports = router

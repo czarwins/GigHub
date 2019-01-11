@@ -47,21 +47,21 @@ const taskController = {
     
         const taskId = req.params.taskId
         Task.findById(taskId).then((task) => {
-            console.log(task)
-            // res.send("hello world")
             res.render('app/show', { task, taskId })
         })
     },
     edit: (req, res) => {
-        const taskId = req.params.id
-        console.log(taskId)
-        res.render('app/edit', { taskId })
+        
+        const taskId = req.params.taskId
+        Task.findById(taskId).then(task => {
+            res.render('app/edit', { task })
+        })
     },
     update: (req, res) => {
-        const taskId = req.params.id
+        const taskId = req.params.taskId
         console.log( req.body)
         Task.findByIdAndUpdate(taskId, req.body, { new: true }).then((task) => {
-            res.redirect(`/${taskId}`)
+            res.redirect("/manager/"+taskId)
         })
     },
     delete: (req, res) => {
