@@ -1,5 +1,5 @@
 Task = require("../models/Task")
-TaskManager = require("../models/TaskManager")
+TaskManager = require("../models/Manager")
 
 const taskController = {
     index: (req, res) => {

@@ -1,12 +1,12 @@
-const TaskManager = require('../models/TaskManager')
+const Manager = require('../models/Manager')
 const Contractor =require('../models/Contractor')
 const Task = require('../models/Task')
 
-TaskManager.deleteMany()
+Manager.deleteMany()
     .then(() => {
         return Task.deleteMany()
     }).then(() => {
-        return TaskManager.create({
+        return Manager.create({
             company: 'Coca-Cola',
             website: 'www.cocacola.com',
             image: 'https://i.pinimg.com/564x/52/ac/78/52ac78b99e63d90bcf3f8e553ce25f65.jpg',
